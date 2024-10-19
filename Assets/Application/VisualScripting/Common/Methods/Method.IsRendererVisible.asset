@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: Method.IsRendererVisible
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[{"name":"Camera","value":null,"typeHandle":{"Identification":"UnityEngine.Camera,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Renderer","value":null,"typeHandle":{"Identification":"UnityEngine.Renderer,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"},"controlInputDefinitions":[{"key":"Enter","label":null,"summary":null,"hideLabel":true}],"controlOutputDefinitions":[{"key":"Exit","label":null,"summary":null,"hideLabel":true}],"valueInputDefinitions":[{"hasDefaultValue":false,"defaultValue":null,"_type":"UnityEngine.Camera","key":"Camera","label":null,"summary":null,"hideLabel":false},{"hasDefaultValue":false,"defaultValue":null,"_type":"UnityEngine.Renderer","key":"Renderer","label":null,"summary":null,"hideLabel":false}],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":26.0616,"y":122.7516},"zoom":0.83,"elements":[{"defaultValues":{},"position":{"x":-336.0,"y":-116.0},"guid":"294f90fe-6689-4025-aff3-bb8fddd6ae3a","$version":"A","$type":"Unity.VisualScripting.GraphInput","$id":"15"},{"defaultValues":{},"position":{"x":859.0,"y":-113.0},"guid":"3341630d-7e9e-4a26-b42c-05867671ac50","$version":"A","$type":"Unity.VisualScripting.GraphOutput"},{"kind":"Graph","defaultValues":{"name":{"$content":"Camera","$type":"System.String"}},"position":{"x":-39.0,"y":-116.0},"guid":"dbe45f28-18b0-4785-81a0-ccdd3e96974d","$version":"A","$type":"Unity.VisualScripting.SetVariable","$id":"19"},{"kind":"Graph","defaultValues":{"name":{"$content":"Renderer","$type":"System.String"}},"position":{"x":-40.0,"y":77.0},"guid":"933d42fe-0ff6-47c0-b1ed-e514372539e6","$version":"A","$type":"Unity.VisualScripting.SetVariable","$id":"21"},{"specifyFallback":false,"kind":"Graph","defaultValues":{"name":{"$content":"Camera","$type":"System.String"}},"position":{"x":179.0,"y":272.0},"guid":"28a55284-6a41-4f18-ba99-6ac3276f0525","$version":"A","$type":"Unity.VisualScripting.GetVariable"},{"sourceUnit":{"$ref":"15"},"sourceKey":"Enter","destinationUnit":{"$ref":"19"},"destinationKey":"assign","guid":"088578ca-bfbf-4f9c-98fd-20bd235715e7","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"19"},"sourceKey":"assigned","destinationUnit":{"$ref":"21"},"destinationKey":"assign","guid":"c978acf9-d122-4f7c-9e96-cfa08c1bbbd7","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"15"},"sourceKey":"Camera","destinationUnit":{"$ref":"19"},"destinationKey":"input","guid":"c4e0ff83-a64f-484d-8558-86285a4ca158","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"15"},"sourceKey":"Renderer","destinationUnit":{"$ref":"21"},"destinationKey":"input","guid":"cbf5e7cc-8164-41a5-b46e-2fb84ae8983f","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []
