@@ -11,6 +11,7 @@ public class BossController : MonoBehaviour
     public Transform offset;
     private float cooldown = 3.0f;
     public GameObject player;
+    public float speed = 2.0f;
     void Start()
     {
         
@@ -19,14 +20,21 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        EnemyHealth health = gameObject.GetComponent<EnemyHealth>();
+        if (health.currentHealth < 0)
+        {
+            Destroy(gameObject);
+        }
         Vector3 scale = transform.localScale;
         if (player.transform.position.x > transform.position.x)
         {
             scale.x = Mathf.Abs(scale.x) * -1;
+            transform.Translate(speed * Time.deltaTime, 0, 0);
         }
         else
         {
             scale.x = Mathf.Abs(scale.x);
+            transform.Translate(speed * Time.deltaTime * -1, 0, 0);
         }
         transform.localScale = scale;
         cooldown -= Time.deltaTime;

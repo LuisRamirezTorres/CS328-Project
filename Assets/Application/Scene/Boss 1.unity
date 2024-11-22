@@ -915,9 +915,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4377541249312697901, guid: b0443cd670638e246bde739cd0ff319d, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4377541249312697901, guid: b0443cd670638e246bde739cd0ff319d, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 1273752093}
+    - target: {fileID: 4377541249312697901, guid: b0443cd670638e246bde739cd0ff319d, type: 3}
+      propertyPath: enemies.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 5502903055035311452, guid: b0443cd670638e246bde739cd0ff319d, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2131,7 +2139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb409c69d0815f4aa5493a505fa1787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 75
 --- !u!1 &1329101608
 GameObject:
   m_ObjectHideFlags: 0
@@ -6170,6 +6178,8 @@ GameObject:
   - component: {fileID: 2102587838}
   - component: {fileID: 2102587837}
   - component: {fileID: 2102587836}
+  - component: {fileID: 2102587841}
+  - component: {fileID: 2102587842}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Untagged
@@ -6192,6 +6202,7 @@ MonoBehaviour:
   projectile: {fileID: 8140172870884229905, guid: c80bf63ea2303ca4ca101931f2330b9b, type: 3}
   offset: {fileID: 1812274465}
   player: {fileID: 610380813}
+  speed: 2
 --- !u!95 &2102587837
 Animator:
   serializedVersion: 5
@@ -6281,6 +6292,56 @@ Transform:
   - {fileID: 1812274465}
   m_Father: {fileID: 1423231809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2102587841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102587835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67ce881a084b574480f7e07fe50b558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  currentHealth: 50
+  enemyCollider: {fileID: 2102587842}
+--- !u!70 &2102587842
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102587835}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.44, y: 0.96}
+  m_Direction: 0
 --- !u!1 &2112784265
 GameObject:
   m_ObjectHideFlags: 0
