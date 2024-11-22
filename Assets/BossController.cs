@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BossController : MonoBehaviour
@@ -32,7 +33,11 @@ public class BossController : MonoBehaviour
         if (cooldown <= 0)
         {
             cooldown = 3.0f;
-            Instantiate(projectile, offset.position, transform.rotation);
+            Object proj = Instantiate(projectile, offset.position, transform.rotation);
+            if (transform.localScale.x < 0)
+            {
+                proj.GetComponent<ProjectileBehavior>().left = false;
+            }
         }
     }
 }

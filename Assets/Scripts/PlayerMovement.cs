@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
     public CharacterController2D controller;
     public Rigidbody2D rb;
-    private HealthHandler playerHealth;
+    public HealthHandler playerHealth;
 
     public Collider2D playerBoxCollider;
     public Collider2D playerCircleCollider;
@@ -23,13 +23,14 @@ public class PlayerMovement : MonoBehaviour
     public GameObject runPunchPoint;
     public float radius;
     public LayerMask enemies;
-    public float damage; 
+    public float damage;
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = GetComponent<HealthHandler>();
+        //playerHealth = GetComponent<HealthHandler>();
 
         currentHealth = playerHealth.health;
 

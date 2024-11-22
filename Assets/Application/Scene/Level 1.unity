@@ -915,6 +915,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4377541249312697901, guid: b0443cd670638e246bde739cd0ff319d, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1273752093}
     - target: {fileID: 5927960543158589340, guid: b0443cd670638e246bde739cd0ff319d, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1780,6 +1784,7 @@ GameObject:
   - component: {fileID: 1273752090}
   - component: {fileID: 1273752092}
   - component: {fileID: 1273752091}
+  - component: {fileID: 1273752093}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -1830,6 +1835,19 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 1dacb48a70c27b84b92a947a638c65a1, type: 3}
   m_SortingOrder: 0
+--- !u!114 &1273752093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273752089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb409c69d0815f4aa5493a505fa1787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &1329101608
 GameObject:
   m_ObjectHideFlags: 0
