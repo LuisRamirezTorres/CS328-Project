@@ -7,8 +7,14 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator anim;
     public CharacterController2D controller;
+    public Rigidbody2D rb;
+    private HealthHandler playerHealth;
 
+    public Collider2D playerBoxCollider;
+    public Collider2D playerCircleCollider;
+    
     float horizontalMove = 0f;
+    private float currentHealth;
 
     public float runSpeed = 40f;
     bool jump = false;
@@ -23,12 +29,34 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerHealth = GetComponent<HealthHandler>();
+
+        currentHealth = playerHealth.health;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (playerHealth.health < currentHealth)
+        {
+            currentHealth = playerHealth.health;
+            anim.SetTrigger("isAttacked");
+        }
+
+        if (currentHealth <= 0)
+        {
+            anim.SetBool("isDead", true);
+            playerBoxCollider.enabled = false;
+            playerCircleCollider.enabled = false;
+            rb.gravityScale = .03f;
+            return;
+        }
+
+
+
+
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         anim.SetFloat("Speed", Mathf.Abs(horizontalMove));
