@@ -31,7 +31,7 @@ public class EnemyPatrol : MonoBehaviour
         currentPoint = pointB.transform;
         anim.SetFloat("Speed", speed);
 
-       enemyHealth = GetComponent<EnemyHealth>();
+        enemyHealth = GetComponent<EnemyHealth>();
 
     }
 
