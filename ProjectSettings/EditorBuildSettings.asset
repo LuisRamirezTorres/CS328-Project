@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Application/Scene/Level 1.unity
     guid: 061e911ee16aa374492129c70f68851e
   - enabled: 1
+    path: Assets/Application/Scene/Boss 1.unity
+    guid: 8539eff3cbef48e478e295e64dae2fed
+  - enabled: 1
     path: Assets/Application/Scene/Scene.Application.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
