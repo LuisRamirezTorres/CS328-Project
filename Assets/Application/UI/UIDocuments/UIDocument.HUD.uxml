@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="HUD" style="flex-grow: 1;">
+        <ui:ProgressBar value="25" name="ProgressBar" style="background-color: rgba(50, 3, 212, 0); -unity-background-image-tint-color: rgb(183, 11, 11); opacity: 1; -unity-background-scale-mode: stretch-to-fill; width: 400px; height: 45px; position: absolute; top: 150px; left: 20px;" />
+    </ui:VisualElement>
+</ui:UXML>
