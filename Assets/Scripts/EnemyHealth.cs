@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public float health;
     public float currentHealth;
 
+    public Collider2D enemyCollider;
+
     private Animator anim; 
 
     // Start is called before the first frame update
@@ -32,6 +34,8 @@ public class EnemyHealth : MonoBehaviour
         {
             anim.SetBool("isDead", true);
             Debug.Log("Enemy is dead");
+
+            enemyCollider.enabled = false;
         }
     }
 }
