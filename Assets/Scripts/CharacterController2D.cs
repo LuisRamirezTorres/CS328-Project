@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+
+// IMPORTANT NOTE: THIS SCRIPT IS A MODIFIED (MODIFIED TO FIT PROJECT NEEDS) VERSION OF BRACKEY'S CHARACTER 2D CONTROLLER SCRIPT FROM YOUTUBE
+
 public class CharacterController2D : MonoBehaviour
 {
     [SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
@@ -9,11 +12,11 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
     [SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
     [SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
-    
-    
+
 
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool m_Grounded;            // Whether or not the player is grounded.
+    private bool m_CanDoubleJump;
 
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
@@ -32,7 +35,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void Awake()
     {
-        m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        m_Rigidbody2D = GetComponent<Rigidbody2D>();    
 
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
@@ -52,6 +55,8 @@ public class CharacterController2D : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
+                m_CanDoubleJump = true;;
+
                 if (!wasGrounded)
                     OnLandEvent.Invoke();
             }
@@ -59,7 +64,7 @@ public class CharacterController2D : MonoBehaviour
     }
 
 
-    public void Move(float move, bool jump)
+    public void Move(float move, bool jump, bool canDoubleJump)
     {
         
 
@@ -86,12 +91,26 @@ public class CharacterController2D : MonoBehaviour
             }
         }
         // If the player should jump...
-        if (m_Grounded && jump)
+        if (jump)
         {
-            // Add a vertical force to the player.
-            m_Grounded = true;
-            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            if (m_Grounded)
+            {
+                Jump();
+            }
+            else if (m_CanDoubleJump)
+            {
+                m_CanDoubleJump = false;
+                
+                Jump();
+            }
         }
+    }
+
+
+    private void Jump()
+    {
+        m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0f);
+        m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
     }
 
 

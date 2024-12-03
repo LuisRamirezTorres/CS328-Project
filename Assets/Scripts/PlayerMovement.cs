@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// IMPORTANT NOTE: THIS SCRIPT IS A MODIFIED (MODIFIED TO FIT PROJECT NEEDS) VERSION OF BRACKEY'S CHARACTER 2D CONTROLLER SCRIPT FROM YOUTUBE
+
+
 public class PlayerMovement : MonoBehaviour
 {
 
@@ -65,10 +68,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            anim.SetBool("isDoubleJumping", false);
             anim.SetBool("isJumping", true);
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.J))
         {
             anim.SetBool("isPunching", true);
         }
@@ -110,8 +114,9 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        controller.Move(horizontalMove * Time.fixedDeltaTime, jump);    // Move our player
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump, false);    // Move our player
         jump = false;
+        
     }
 
     private void OnDrawGizmos()
