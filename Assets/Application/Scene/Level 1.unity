@@ -254,6 +254,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1394865699}
+    - target: {fileID: 1560643106807586288, guid: 6151ba14750a38b43af833bf91049614, type: 3}
+      propertyPath: playerHealthHandler
+      value: 
+      objectReference: {fileID: 1273752093}
     - target: {fileID: 5426184687181645127, guid: 6151ba14750a38b43af833bf91049614, type: 3}
       propertyPath: m_Name
       value: Junkie (2)
@@ -407,6 +411,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1394865699}
+    - target: {fileID: 1560643106807586288, guid: 6151ba14750a38b43af833bf91049614, type: 3}
+      propertyPath: playerHealthHandler
+      value: 
+      objectReference: {fileID: 1273752093}
     - target: {fileID: 5426184687181645127, guid: 6151ba14750a38b43af833bf91049614, type: 3}
       propertyPath: m_Name
       value: Junkie (1)
@@ -2548,6 +2556,10 @@ PrefabInstance:
     - target: {fileID: 4377541249312697901, guid: b0443cd670638e246bde739cd0ff319d, type: 3}
       propertyPath: enemies.m_Bits
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502903055035311452, guid: b0443cd670638e246bde739cd0ff319d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8374639340777821533, guid: b0443cd670638e246bde739cd0ff319d, type: 3}
       propertyPath: m_JumpForce
@@ -10617,6 +10629,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1394865699}
+    - target: {fileID: 1560643106807586288, guid: 6151ba14750a38b43af833bf91049614, type: 3}
+      propertyPath: playerHealthHandler
+      value: 
+      objectReference: {fileID: 1273752093}
     - target: {fileID: 5426184687181645127, guid: 6151ba14750a38b43af833bf91049614, type: 3}
       propertyPath: m_Name
       value: Junkie
