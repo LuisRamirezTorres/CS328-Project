@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaea62d4528c4c347bbdb19291af2e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Data: {fileID: 11400000, guid: 1fa6e1567e0d7df4ea76ece745ba129d, type: 2}
   m_JumpForce: 400
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -192,6 +193,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 183
   m_GroundCheck: {fileID: 5779229169492572194}
+  _groundCheckSize: {x: 0.49, y: 0.03}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -302,6 +307,7 @@ MonoBehaviour:
   anim: {fileID: 1976439805811626612}
   controller: {fileID: 8374639340777821533}
   rb: {fileID: 7011358386468940320}
+  playerHealth: {fileID: 0}
   playerBoxCollider: {fileID: 2206334562875584129}
   playerCircleCollider: {fileID: 5927960543158589340}
   runSpeed: 20
