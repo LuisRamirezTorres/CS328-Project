@@ -14,7 +14,8 @@ public class EnemyAttack : MonoBehaviour
 
     private float distance;
 
-    public GameObject player; 
+    public GameObject player;
+    public HealthHandler playerHealthHandler;
     public GameObject punchPoint;
     public GameObject runPunchPoint; 
     
@@ -64,7 +65,8 @@ public class EnemyAttack : MonoBehaviour
         foreach (Collider2D playerGameObject in player)
         {
             Debug.Log("Player Hit");
-            playerGameObject.GetComponent<HealthHandler>().health -= enemyDamage;
+            //playerGameObject.GetComponent<HealthHandler>().health -= enemyDamage;
+            playerHealthHandler.health -= enemyDamage;
         }
     }
 
@@ -75,7 +77,8 @@ public class EnemyAttack : MonoBehaviour
         foreach (Collider2D playerGameObject in player)
         {
             Debug.Log("Player Hit");
-            playerGameObject.GetComponent<HealthHandler>().health -= enemyDamage;
+            //playerGameObject.GetComponent<HealthHandler>().health -= enemyDamage;
+            playerHealthHandler.health -= enemyDamage;
         }
     }
 
