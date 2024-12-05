@@ -39,10 +39,10 @@ public class CyberPsychosisHandler : MonoBehaviour
     {
         if (psychosisBar != null)
         {
-            // Update the psychosis level
+            // increase the psychosis level
             psychosisLevel += increaseRate * Time.deltaTime; 
 
-            // Clamp the value between 0 and 100
+            // clamp the value between 0 and 100
             psychosisLevel = Mathf.Clamp(psychosisLevel, 0f, 100f);
 
             
