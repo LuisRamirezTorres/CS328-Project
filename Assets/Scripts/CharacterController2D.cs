@@ -150,8 +150,6 @@ public class CharacterController2D : MonoBehaviour
     private void Run()
     {
         float targetSpeed = m_moveInput.x * Data.runMaxSpeed;
-        Debug.Log("targetspeed: " + targetSpeed);
-        Debug.Log("moveInput: " + m_moveInput);
         float accelerate;
 
         if (LastOnGroundTime > 0)
@@ -160,9 +158,6 @@ public class CharacterController2D : MonoBehaviour
             accelerate = (Math.Abs(targetSpeed) > 0.01f)
                 ? Data.runAccelAmount * Data.accelInAir
                 : Data.runDeccelAmount * Data.deccelInAir;
-        
-        Debug.Log("accelerate" + accelerate);
-        Debug.Log("last on ground time" + LastOnGroundTime);
 
         if (IsJumping && Math.Abs(RB.velocity.y) < Data.jumpHangTimeThreshold)
         {
@@ -180,8 +175,6 @@ public class CharacterController2D : MonoBehaviour
 
         float movement = speedDif * accelerate;
         
-        Debug.Log("movement" + movement);
-        
         RB.AddForce(movement * Vector2.right, ForceMode2D.Force);
 
 
@@ -192,10 +185,7 @@ public class CharacterController2D : MonoBehaviour
         // Switch the way the player is labelled as facing.
         m_FacingRight = !m_FacingRight;
 
-        // Multiply the player's x local scale by -1.
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
+        transform.Rotate(0f, 180f, 0f);
     }
     
     /* !!! */
