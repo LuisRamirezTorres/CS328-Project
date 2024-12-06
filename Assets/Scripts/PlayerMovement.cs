@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isPunching", true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.K))
         {
             anim.SetBool("isShooting", true);
         }

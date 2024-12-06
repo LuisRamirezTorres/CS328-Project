@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.K))
         {
             audioManager.PlaySFX(audioManager.miguelGun);
             Shoot();
