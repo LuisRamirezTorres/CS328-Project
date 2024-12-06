@@ -9,7 +9,10 @@ public class Bullet : MonoBehaviour
     private float speed;
     
     [SerializeField] 
-    private GameObject impactEffect;    
+    private GameObject impactEffect;
+
+    [SerializeField] 
+    private float damage;
 
     private Rigidbody2D rb;
     void Start()
@@ -21,6 +24,10 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Debug.Log("Bullet hit " + hitInfo.name);
+
+        EnemyHealth enemyHealth = hitInfo.GetComponent<EnemyHealth>();
+        if (enemyHealth != null)
+            enemyHealth.TakeDamage(damage);
 
         Instantiate(impactEffect, transform.position, transform.rotation);
         
