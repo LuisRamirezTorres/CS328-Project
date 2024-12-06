@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LevelTransition
   - HealthHUD
+  - Audio
   layers:
   - Default
   - TransparentFX

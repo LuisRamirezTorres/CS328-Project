@@ -10,8 +10,15 @@ public class PowerUp : MonoBehaviour
     public CyberPsychosisHandler psychosis;
     public GameObject miguel;
 
+    private AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        audioManager.PlaySFX(audioManager.obtainStim);
         Destroy(gameObject);
         psychosis.psychosisLevel -= decreaseAmount;
         miguel.GetComponent<PlayerMovement>().damage += damageIncrease;

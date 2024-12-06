@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public HealthHandler playerHealth;
 
+    private AudioManager audioManager;
+
     [Header("Colliders")]
     public Collider2D playerBoxCollider;
     public Collider2D playerCircleCollider;
@@ -40,6 +42,11 @@ public class PlayerMovement : MonoBehaviour
 
         currentHealth = playerHealth.health;
 
+    }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -95,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void punch()
     {
+        audioManager.PlaySFX(audioManager.miguelPunch);
         Collider2D[] enemy = Physics2D.OverlapCircleAll(punchPoint.transform.position, radius, enemies);
     
         foreach (Collider2D enemyGameObject in enemy) {
