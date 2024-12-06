@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
     
         foreach (Collider2D enemyGameObject in enemy) {
             Debug.Log("Enemy Hit");
-            enemyGameObject.GetComponent<EnemyHealth>().health -= damage;   // damage is applied to an enemy in the "enemies" layer
+            enemyGameObject.GetComponent<EnemyHealth>().TakeDamage(damage);   // damage is applied to an enemy in the "enemies" layer
         }
     }
 
@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (Collider2D enemyGameObject in enemy) {
             Debug.Log("Enemy Hit");
-            enemyGameObject.GetComponent<EnemyHealth>().health -= damage;   // damage is applied to an enemy in the "enemies" layer
+            enemyGameObject.GetComponent<EnemyHealth>().TakeDamage(damage);   // damage is applied to an enemy in the "enemies" layer
         }
     }
 
@@ -117,6 +117,12 @@ public class PlayerMovement : MonoBehaviour
     public void endPunch()
     {
         anim.SetBool("isPunching", false);
+    }
+
+
+    public void endShooting()
+    {
+        anim.SetBool("isShooting", false);
     }
 
     void FixedUpdate()
