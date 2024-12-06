@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class BossController : MonoBehaviour
     public bool flip;
     public Collider2D circleCollider;
     public Rigidbody2D rb;
+
     void Start()
     {
         
@@ -28,6 +30,7 @@ public class BossController : MonoBehaviour
         {
             rb.gravityScale = -.02f;
             circleCollider.enabled = false;
+            SceneManager.LoadScene(0);
             return;
         }
         Vector3 scale = transform.localScale;

@@ -7,6 +7,12 @@ public class RobotBehavior : MonoBehaviour
     // Start is called before the first frame update
     public GameObject bullet;
     public Transform bullet_posiiton;
+    private AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     private float timer;
     void Start()
@@ -26,6 +32,7 @@ public class RobotBehavior : MonoBehaviour
     }
     void shoot()
     {
+        audioManager.PlaySFX(audioManager.enemyGun);
         Instantiate(bullet, bullet_posiiton.position, Quaternion.identity);
     }
 }
