@@ -33,8 +33,8 @@ public class RobotBullet : MonoBehaviour
         {
             GameObject hud = GameObject.FindGameObjectWithTag("HealthHUD");
             hud.GetComponent<HealthHandler>().health -= 5;
-            Destroy(gameObject);
 
         }
+        Destroy(gameObject);
     }
 }
