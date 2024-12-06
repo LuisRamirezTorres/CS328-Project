@@ -18,11 +18,6 @@ public class BombFall : MonoBehaviour
     {
         transform.position -= new Vector3(0, speed * Time.deltaTime, 0);
         timer += Time.deltaTime;
-        if (timer > 4) {
-
-            Instantiate(explosion, transform.position, Quaternion.identity);
-            Destroy(gameObject);    
-        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
