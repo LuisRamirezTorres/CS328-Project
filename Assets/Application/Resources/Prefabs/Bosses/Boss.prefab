@@ -161,6 +161,7 @@ MonoBehaviour:
   speed: 2
   flip: 1
   circleCollider: {fileID: 5882047100799197197}
+  rb: {fileID: 859987429594006478}
 --- !u!114 &9118324203834339465
 MonoBehaviour:
   m_ObjectHideFlags: 0
