@@ -6,12 +6,18 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    private AudioManager audioManager;
+    
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            
+            audioManager.PlaySFX(audioManager.miguelGun);
             Shoot();
         }
     }
