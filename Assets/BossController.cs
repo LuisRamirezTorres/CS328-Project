@@ -9,11 +9,12 @@ public class BossController : MonoBehaviour
     // Start is called before the first frame update
     public ProjectileBehavior projectile;
     public Transform offset;
-    private float cooldown = 3.0f;
+    private float cooldown = 1.0f;
     public GameObject player;
     public float speed = 2.0f;
     public bool flip;
     public Collider2D circleCollider;
+    public Rigidbody2D rb;
     void Start()
     {
         
@@ -23,8 +24,9 @@ public class BossController : MonoBehaviour
     void Update()
     {
         EnemyHealth health = gameObject.GetComponent<EnemyHealth>();
-        if (health.currentHealth < 0)
+        if (health.health <= 0)
         {
+            rb.gravityScale = -.02f;
             circleCollider.enabled = false;
             return;
         }
