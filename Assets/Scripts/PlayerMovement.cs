@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // IMPORTANT NOTE: THIS SCRIPT IS A MODIFIED (MODIFIED TO FIT PROJECT NEEDS) VERSION OF BRACKEY'S CHARACTER 2D CONTROLLER SCRIPT FROM YOUTUBE
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public HealthHandler playerHealth;
 
+    [Header("Colliders")]
     public Collider2D playerBoxCollider;
     public Collider2D playerCircleCollider;
     
@@ -21,14 +23,15 @@ public class PlayerMovement : MonoBehaviour
 
     public float runSpeed = 40f;
     bool jump = false;
-
+    
+    [Header("Punch Points")]
     public GameObject punchPoint;
     public GameObject runPunchPoint;
+    
+    [Header("Enemies & Damage")]
     public float radius;
     public LayerMask enemies;
     public float damage;
-    
-
 
     // Start is called before the first frame update
     void Start()
@@ -75,6 +78,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.J))
         {
             anim.SetBool("isPunching", true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            anim.SetBool("isShooting", true);
         }
 
     }
