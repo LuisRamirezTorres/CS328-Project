@@ -9,6 +9,7 @@ public class CyberPsychosisHandler : MonoBehaviour
     private ProgressBar psychosisBar;
     public float psychosisLevel = 0f;
     public float increaseRate = 0.5f;
+    public HealthHandler playerHealth;
 
 
 
@@ -37,6 +38,13 @@ public class CyberPsychosisHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (psychosisLevel >= 100f)
+        {
+            playerHealth.health = 0;
+            return;
+        }
+
         if (psychosisBar != null)
         {
             // increase the psychosis level
