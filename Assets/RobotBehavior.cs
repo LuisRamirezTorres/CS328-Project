@@ -8,6 +8,7 @@ public class RobotBehavior : MonoBehaviour
     public GameObject bullet;
     public Transform bullet_posiiton;
     private AudioManager audioManager;
+    private GameObject player;
 
     private void Awake()
     {
@@ -17,17 +18,27 @@ public class RobotBehavior : MonoBehaviour
     private float timer;
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > 2)
+        
+
+        float distance = Vector2.Distance(transform.position, player.transform.position);
+
+        if (distance < 15)
         {
-            timer = 0;
-            shoot();
+            timer += Time.deltaTime;
+
+            if (timer > 2)
+            {
+
+                timer = 0;
+                shoot();
+
+            }
         }
     }
     void shoot()

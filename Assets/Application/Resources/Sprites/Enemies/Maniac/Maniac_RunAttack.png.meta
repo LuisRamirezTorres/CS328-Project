@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f4e946f91c6692d429c1eafba0a773cb
+guid: d8403199e6542c04aa974ab5ed0340fe
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -94,19 +94,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: Maniac_RunAttack_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
-        width: 48
-        height: 48
+        width: 19
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c249dfbbd83d904fae81b9b907ec748
-      internalID: -1617613133
+      spriteID: f2388f30c136e114ea9c5b6ed863638a
+      internalID: -1847829964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_1
+      name: Maniac_RunAttack_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 56
         y: 0
-        width: 48
-        height: 48
+        width: 14
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dfbb20eb33421f4a875721edcdccebb
-      internalID: 1823572524
+      spriteID: 1f5dff4b88032c644ba91f4a3c5ef850
+      internalID: -1278970494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2
+      name: Maniac_RunAttack_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 101
         y: 0
-        width: 48
-        height: 48
+        width: 17
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a847db308a9a4e4e9cb8684e63bf38e
-      internalID: 2079665541
+      spriteID: c56a503c810c05c4f81b9a35798baafa
+      internalID: 1727712184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_3
+      name: Maniac_RunAttack_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 145
         y: 0
-        width: 48
-        height: 48
+        width: 31
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +187,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03c50a27216642441bf74e9ccd226baa
-      internalID: -1155854701
+      spriteID: cd3e099d543202f4597839244e7bab7a
+      internalID: -1096549724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maniac_RunAttack_4
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 0
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc997970b1369c14b9ba1166d3be29a1
+      internalID: 1374375278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maniac_RunAttack_5
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 0
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14280ddbadebe6c46a4de85aadff88bc
+      internalID: 2033393907
       vertices: []
       indices: 
       edges: []
@@ -217,10 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_0: -1617613133
-      Idle_1: 1823572524
-      Idle_2: 2079665541
-      Idle_3: -1155854701
+      Maniac_RunAttack_0: -1847829964
+      Maniac_RunAttack_1: -1278970494
+      Maniac_RunAttack_2: 1727712184
+      Maniac_RunAttack_3: -1096549724
+      Maniac_RunAttack_4: 1374375278
+      Maniac_RunAttack_5: 2033393907
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
