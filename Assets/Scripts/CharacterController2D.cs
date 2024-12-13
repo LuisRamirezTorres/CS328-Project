@@ -11,19 +11,19 @@ using UnityEngine.Events;
 public class CharacterController2D : MonoBehaviour
 {
     public PlayerData Data;
-    
+
     [SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
-    
+
     [Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f;   // How much to smooth out the movement
     [SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
     [SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
     [SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
-    
+
     [SerializeField] private Vector2 _groundCheckSize = new Vector2(0.49f, 0.03f);
-    
+
     [Header("Layers & Tags")]
     [SerializeField] private LayerMask _groundLayer;
-    
+
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool m_Grounded;            // Whether or not the player is grounded.
     private bool m_CanDoubleJump;
@@ -42,6 +42,9 @@ public class CharacterController2D : MonoBehaviour
 
     public UnityEvent OnLandEvent;
 
+    public int shock_multiplier = 1;
+    private float shock_timer = 0.0f;
+
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
 
@@ -51,16 +54,26 @@ public class CharacterController2D : MonoBehaviour
         /* !!! */
         LastOnGroundTime -= Time.deltaTime;
 
-        m_moveInput.x = Input.GetAxisRaw("Horizontal");
+        m_moveInput.x = Input.GetAxisRaw("Horizontal") * shock_multiplier;
         if (m_moveInput.x != 0)
             CheckDirectionToFace(m_moveInput.x > 0);
-        
+
         if (IsJumping && m_Rigidbody2D.velocity.y < 0)
             IsJumping = false;
-        
+
         //Ground Check
         if (Physics2D.OverlapBox(m_GroundCheck.position, _groundCheckSize, 0, _groundLayer)) //checks if set box overlaps with ground
             LastOnGroundTime = 0.1f;
+        //Check if player still shocked
+        if (shock_multiplier == 0)
+        {
+            shock_timer += Time.deltaTime;
+            if (shock_timer > 2)
+            {
+                shock_multiplier = 1;
+                shock_timer = 0.0f;
+            }
+        }
     }
 
     private void Awake()
@@ -97,7 +110,7 @@ public class CharacterController2D : MonoBehaviour
 
     public void Move(float move, bool jump, bool canDoubleJump)
     {
-        
+
 
         //only control the player if grounded or airControl is turned on
         if (m_Grounded || m_AirControl)
@@ -124,7 +137,7 @@ public class CharacterController2D : MonoBehaviour
         }
         // If the player should jump...
         if (jump)
-        {   
+        {
             if (m_Grounded)
             {
                 IsJumping = true;
@@ -133,7 +146,7 @@ public class CharacterController2D : MonoBehaviour
             else if (m_CanDoubleJump)
             {
                 m_CanDoubleJump = false;
-                
+
                 Jump();
             }
         }
@@ -169,12 +182,12 @@ public class CharacterController2D : MonoBehaviour
             Mathf.Sign(RB.velocity.x) == Mathf.Sign(targetSpeed) && Mathf.Abs(targetSpeed) > 0.01f &&
             LastOnGroundTime < 0)
             accelerate = 0;
-        
+
         //Calculate difference between current velocity and desired velocity
         float speedDif = targetSpeed - RB.velocity.x;
 
         float movement = speedDif * accelerate;
-        
+
         RB.AddForce(movement * Vector2.right, ForceMode2D.Force);
 
 
@@ -187,7 +200,7 @@ public class CharacterController2D : MonoBehaviour
 
         transform.Rotate(0f, 180f, 0f);
     }
-    
+
     /* !!! */
     public void CheckDirectionToFace(bool isMovingRight)
     {
