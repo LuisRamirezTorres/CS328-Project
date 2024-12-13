@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class HealthHandler : MonoBehaviour
 {
@@ -25,5 +26,8 @@ public class HealthHandler : MonoBehaviour
         bar.style.backgroundColor = Color.red;
         ProgressBar pb = (ProgressBar)ve.Q(className: "unity-progress-bar");
         pb.value = health;
+
+        if (health <= 0)
+            SceneManager.LoadScene(0);
     }
 }

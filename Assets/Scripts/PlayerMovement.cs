@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isJumping", true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.J))
         {
             anim.SetBool("isPunching", true);
         }
