@@ -36,7 +36,7 @@ public class ElectricBehavior : MonoBehaviour
         {
             GameObject hud = GameObject.FindGameObjectWithTag("HealthHUD");
             CharacterController2D pm = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController2D>();
-            //pm.shock_multiplier = 0;
+            pm.shock_multiplier = 0;
             hud.GetComponent<HealthHandler>().health -= 5;
             obj_collider.enabled = false;
             enable_timer = true;
