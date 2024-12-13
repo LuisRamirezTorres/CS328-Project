@@ -7,7 +7,7 @@ public class HealthHandler : MonoBehaviour
 {
     // Start is called before the first frame update
     private VisualElement bar;
-    public int health = 100;
+    public float health = 100;
     void Start()
     {
         UIDocument ui_doc = gameObject.GetComponent<UIDocument>();
