@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // IMPORTANT NOTE: THIS SCRIPT IS A MODIFIED (MODIFIED TO FIT PROJECT NEEDS) VERSION OF BRACKEY'S CHARACTER 2D CONTROLLER SCRIPT FROM YOUTUBE
 
@@ -62,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
         if (currentHealth <= 0)
         {
             anim.SetBool("isDead", true);
+            SceneManager.LoadScene(0);
             playerBoxCollider.enabled = false;
             playerCircleCollider.enabled = false;
             rb.gravityScale = .03f;
@@ -82,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isJumping", true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.J))
         {
             anim.SetBool("isPunching", true);
         }
