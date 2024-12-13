@@ -30,7 +30,8 @@ public class BossController : MonoBehaviour
         {
             rb.gravityScale = -.02f;
             circleCollider.enabled = false;
-            SceneManager.LoadScene(0);
+            
+            SceneManager.LoadScene(3);
             return;
         }
         Vector3 scale = transform.localScale;
