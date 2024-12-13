@@ -8,7 +8,7 @@ public class HealthSiphon : MonoBehaviour
 
     public float distanceBetween;
     public HealthHandler playerHealthHandler;
-    public int decreaseRate;
+    public float decreaseRate;
     public GameObject player;
     private float distance;
 
@@ -26,7 +26,7 @@ public class HealthSiphon : MonoBehaviour
         if (distance < distanceBetween)
         {
             
-            playerHealthHandler.health -= (int)Time.deltaTime * 1;
+            playerHealthHandler.health -= decreaseRate * Time.deltaTime;
         }
 
     }

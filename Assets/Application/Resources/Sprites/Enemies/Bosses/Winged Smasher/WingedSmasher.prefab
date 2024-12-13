@@ -248,9 +248,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6359e9266ba8e3d4f83d0e20f3800729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceBetween: 10
+  distanceBetween: 4
   playerHealthHandler: {fileID: 0}
-  decreaseRate: 1
+  decreaseRate: 2
   player: {fileID: 0}
 --- !u!114 &5613670359162139455
 MonoBehaviour:
